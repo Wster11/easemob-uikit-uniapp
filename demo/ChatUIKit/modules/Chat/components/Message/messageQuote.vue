@@ -4,7 +4,9 @@
       <view class="title" :style="titleStyle ? titleStyle : {}">
         <view class="user" v-if="props.isReplying" v-text="you"></view>
         <view class="tip" v-if="props.isReplying" v-text="reply"></view>
-        <view class="user" v-if="quoteFrom">{{ quoteFrom.nickname }}</view>
+        <view class="user ellipsis" v-if="quoteFrom">{{
+          quoteFrom.nickname
+        }}</view>
       </view>
       <view class="content">
         <span class="msg ellipsis">
@@ -127,6 +129,7 @@ onUnmounted(() => {
   padding: 8px 12px;
   border-radius: 4px;
   flex: 1;
+  justify-content: space-between;
 }
 
 .title {
@@ -162,6 +165,7 @@ onUnmounted(() => {
 
 .quote-brief {
   flex: 1;
+  max-width: calc(80vw - 50px);
 }
 
 .msg {
