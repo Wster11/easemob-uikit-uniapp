@@ -96,7 +96,7 @@
 <script setup lang="ts">
 import Avatar from "../../../../components/Avatar/index.vue";
 import { t } from "../../../../locales/index";
-import { ref, onUnmounted, computed } from "vue";
+import { ref, onUnmounted, computed } from "../../../../composition-api-adaptor";
 import { ChatUIKit } from "../../../../index";
 import { renderTxt, formatMessage } from "../../../../utils/index";
 import { USER_AVATAR_URL, GROUP_AVATAR_URL } from "../../../../const/index";

@@ -28,7 +28,7 @@
 <script setup lang="ts">
 import NavBar from "../../ChatUIKit/components/NavBar/index.vue";
 import UIKITButton from "../../ChatUIKit/components/Button/index.vue";
-import { ref, onUnmounted, computed } from "vue";
+import { ref, onUnmounted, computed } from "../../ChatUIKit/composition-api-adaptor";
 import { ChatUIKit } from "../../ChatUIKit/index";
 import { t } from "../../const/locales";
 import { autorun } from "mobx";

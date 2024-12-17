@@ -22,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref } from "../../composition-api-adaptor";
 import { t } from "../../locales";
 
 const props = defineProps({

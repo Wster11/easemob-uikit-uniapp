@@ -18,7 +18,7 @@ import type { Chat } from "../../../../sdk";
 import { GROUP_AVATAR_URL } from "../../../../const/index";
 import { ChatUIKit } from "../../../../index";
 import { autorun } from "mobx";
-import { ref, onUnmounted } from "vue";
+import { ref, onUnmounted } from "../../../../composition-api-adaptor";
 
 interface Props {
   group: Chat.GroupInfo;

@@ -23,7 +23,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
+import { ref } from "../../composition-api-adaptor";
 
 interface Props {
   height?: number;

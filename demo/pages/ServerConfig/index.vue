@@ -27,7 +27,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
+import { ref } from "../../ChatUIKit/composition-api-adaptor";
 import { t } from "../../const/locales";
 import {
   SERVER_CONFIG_STORE,

@@ -30,7 +30,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onUnmounted } from "vue";
+import { ref, onUnmounted } from "../../../../composition-api-adaptor";
 import Popup from "../../../../components/Popup/index.vue";
 import IndexedList from "../../../../components/IndexedList/index.vue";
 import UserItem from "../../../ContactList/components/UserItem/index.vue";

@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onUnmounted } from "vue";
+import { ref, onUnmounted } from "../../../../composition-api-adaptor";
 import { ChatUIKit } from "../../../../index";
 import MessageQuote from "./messageQuote.vue";
 import { autorun } from "mobx";

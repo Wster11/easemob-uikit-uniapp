@@ -24,7 +24,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed, onUnmounted } from "vue";
+import { ref, computed, onUnmounted } from "../../../../composition-api-adaptor";
 import { ChatUIKit } from "../../../../index";
 import { autorun } from "mobx";
 import { t } from "../../../../locales/index";

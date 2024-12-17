@@ -53,7 +53,7 @@
 import MessageItem from "./messageItem.vue";
 import MessageTime from "./messageTime.vue";
 import NoticeMessageItem from "./noticeMessageItem.vue";
-import { ref, onMounted, onUnmounted, nextTick } from "vue";
+import { ref, onMounted, onUnmounted, nextTick } from "../../../../composition-api-adaptor";
 import type { MixedMessageBody, Chat } from "../../../../types/index";
 import { ChatUIKit } from "../../../../index";
 import { autorun } from "mobx";

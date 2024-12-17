@@ -52,7 +52,7 @@
 <script setup lang="ts">
 import Avatar from "../../ChatUIKit/components/Avatar/index.vue";
 import MenuItem from "../../ChatUIKit/components/MenuItem/index.vue";
-import { ref, onUnmounted } from "vue";
+import { ref, onUnmounted } from "../../ChatUIKit/composition-api-adaptor";
 import { t } from "../../const/locales";
 import { ChatUIKit } from "../../ChatUIKit/index";
 import { CHAT_STORE } from "@/const/index";

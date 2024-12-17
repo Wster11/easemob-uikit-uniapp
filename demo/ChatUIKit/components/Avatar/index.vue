@@ -23,7 +23,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed } from "vue";
+import { ref, computed } from "../../composition-api-adaptor";
 import { ChatUIKit } from "../../index";
 interface Props {
   src: string;

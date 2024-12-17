@@ -8,7 +8,7 @@
 import ItemContainer from "./itemContainer.vue";
 import { ASSETS_URL } from "../../../../const/index";
 import type { InputToolbarEvent } from "../../../../types/index";
-import { inject } from "vue";
+import { inject } from "../../../../composition-api-adaptor";
 import { t } from "../../../../locales/index";
 import { ChatUIKit } from "../../../../index";
 import { chatSDK } from "../../../../sdk";

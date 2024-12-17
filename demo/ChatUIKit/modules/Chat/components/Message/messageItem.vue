@@ -84,7 +84,7 @@ import MessageQuote from "./messageQuote.vue";
 import MessageActions from "./messageActions.vue";
 import MessageStatus from "./messageStatus.vue";
 import type { MixedMessageBody } from "../../../../types/index";
-import { ref, computed, getCurrentInstance } from "vue";
+import { ref, computed, getCurrentInstance } from "../../../../composition-api-adaptor";
 import { ChatUIKit } from "../../../../index";
 import { getTimeStringAutoShort } from "../../../../utils/index";
 import { USER_AVATAR_URL } from "../../../../const/index";

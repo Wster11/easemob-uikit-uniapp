@@ -35,7 +35,7 @@ import ConversationNav from "../ConversationNav/index.vue";
 import ConversationItem from "../ConversationItem/index.vue";
 import SearchButton from "../../../../components/SearchButton/index.vue";
 import Empty from "../../../../components/Empty/index.vue";
-import { ref, onUnmounted } from "vue";
+import { ref, onUnmounted } from "../../../../composition-api-adaptor";
 import type { Chat } from "../../../../types/index";
 import { ChatUIKit } from "../../../../index";
 import { deepClone, isWXProgram } from "../../../../utils/index";

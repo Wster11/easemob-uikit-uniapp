@@ -38,7 +38,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, computed } from "vue";
+import { ref, onMounted, onUnmounted, computed } from "../../../../composition-api-adaptor";
 import Popup from "../../../../components/Popup/index.vue";
 import { t } from "../../../../locales/index";
 import { ChatUIKit } from "../../../../index";

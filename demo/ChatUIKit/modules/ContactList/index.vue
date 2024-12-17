@@ -53,7 +53,7 @@ import ContactNav from "./components/ContactNav/index.vue";
 import type { Chat } from "../../sdk";
 import { t } from "../../locales/index";
 import { ChatUIKit } from "../../index";
-import { ref, onUnmounted } from "vue";
+import { ref, onUnmounted } from "../../composition-api-adaptor";
 import { isWXProgram } from "../../utils/index";
 import { autorun } from "mobx";
 

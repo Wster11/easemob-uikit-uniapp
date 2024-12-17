@@ -41,7 +41,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, nextTick } from "vue";
+import { ref, nextTick } from "../../../../composition-api-adaptor";
 import AudioMessageSender from "../MessageInputToolBar/audioSender.vue";
 import { formatTextMessage, formatMessage } from "../../../../utils/index";
 import { ChatUIKit } from "../../../../index";

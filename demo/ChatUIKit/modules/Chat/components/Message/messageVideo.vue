@@ -22,7 +22,7 @@
 
 <script lang="ts" setup>
 import { ASSETS_URL } from "../../../../const/index";
-import { ref } from "vue";
+import { ref } from "../../../../composition-api-adaptor";
 
 const VideoNotFound = ASSETS_URL + "video404.png";
 const VideoPlayBtn = ASSETS_URL + "videoplay.png";

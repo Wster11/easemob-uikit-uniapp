@@ -37,7 +37,7 @@
 import NavBar from "../../ChatUIKit/components/NavBar/index.vue";
 import Avatar from "../../ChatUIKit/components/Avatar/index.vue";
 import MenuItem from "../../ChatUIKit/components/MenuItem/index.vue";
-import { ref, onUnmounted } from "vue";
+import { ref, onUnmounted } from "../../ChatUIKit/composition-api-adaptor";
 import { ChatUIKit } from "../../ChatUIKit/index";
 import { getInsideUploadUrl } from "@/const/index";
 import { USER_AVATAR_URL } from "../../ChatUIKit/const";

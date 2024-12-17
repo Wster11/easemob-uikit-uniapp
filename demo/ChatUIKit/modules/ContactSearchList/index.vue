@@ -34,7 +34,7 @@ import Empty from "../../components/Empty/index.vue";
 import { ChatUIKit } from "../../index";
 import { t } from "../../locales";
 import { onLoad } from "@dcloudio/uni-app";
-import { ref, computed } from "vue";
+import { ref, computed } from "../../composition-api-adaptor";
 
 const searchValue = ref("");
 const searchRef = ref(null);

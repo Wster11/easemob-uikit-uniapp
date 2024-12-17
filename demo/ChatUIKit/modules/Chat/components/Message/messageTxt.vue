@@ -23,7 +23,7 @@
 import type { Chat } from "../../../../types/index";
 import { renderTxt } from "../../../../utils/index";
 import { t } from "../../../../locales/index";
-import { computed } from "vue";
+import { computed } from "../../../../composition-api-adaptor";
 import { ChatUIKit } from "../../../../index";
 
 interface Props {

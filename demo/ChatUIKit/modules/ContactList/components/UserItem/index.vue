@@ -17,7 +17,7 @@ import Avatar from "../../../../components/Avatar/index.vue";
 import type { Chat } from "../../../../sdk";
 import { USER_AVATAR_URL } from "../../../../const/index";
 import { ChatUIKit } from "../../../../index";
-import { ref, onUnmounted } from "vue";
+import { ref, onUnmounted } from "../../../../composition-api-adaptor";
 import { UserInfoWithPresence } from "../../../../types/index";
 import { autorun } from "mobx";
 

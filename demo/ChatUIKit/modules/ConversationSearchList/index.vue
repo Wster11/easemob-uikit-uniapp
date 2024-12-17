@@ -40,7 +40,7 @@ import UserItem from "../ContactList/components/UserItem/index.vue";
 import Empty from "../../components/Empty/index.vue";
 import { ChatUIKit } from "../../index";
 import { t } from "../../locales";
-import { ref, computed } from "vue";
+import { ref, computed } from "../../composition-api-adaptor";
 
 const searchValue = ref("");
 const searchRef = ref(null);

@@ -78,7 +78,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onUnmounted } from "vue";
+import { ref, onUnmounted } from "../../ChatUIKit/composition-api-adaptor";
 import { t } from "../../const/locales";
 import { CHAT_STORE, IS_USE_CUSTOM_SERVER } from "@/const/index";
 

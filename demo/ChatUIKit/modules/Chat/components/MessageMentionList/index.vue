@@ -40,7 +40,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref } from "../../../../composition-api-adaptor";
 import Popup from "../../../../components/Popup/index.vue";
 import UserItem from "../../../ContactList/components/UserItem/index.vue";
 import { t } from "../../../../locales/index";

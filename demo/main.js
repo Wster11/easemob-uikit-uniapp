@@ -3,6 +3,8 @@ import App from './App'
 // #ifndef VUE3
 import Vue from 'vue'
 import './uni.promisify.adaptor'
+import VueCompositionAPI from '@vue/composition-api';
+Vue.use(VueCompositionAPI);
 Vue.config.productionTip = false
 App.mpType = 'app'
 const app = new Vue({

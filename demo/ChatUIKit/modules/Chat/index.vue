@@ -82,7 +82,7 @@ import MessageEdit from "./components/Message/messageEdit.vue";
 import MessageMentionList from "./components/MessageMentionList/index.vue";
 import MessageContactList from "./components/MessageContactList/index.vue";
 import { t } from "../../locales/index";
-import { ref, onMounted, computed, onUnmounted, provide } from "vue";
+import { ref, onMounted, computed, onUnmounted, provide } from "../../composition-api-adaptor";
 import { onLoad, onUnload } from "@dcloudio/uni-app";
 import type { InputToolbarEvent, Chat } from "../../types/index";
 import { autorun } from "mobx";

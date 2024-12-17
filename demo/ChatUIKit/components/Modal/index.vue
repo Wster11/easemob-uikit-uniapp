@@ -23,7 +23,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
+import { ref } from "../../composition-api-adaptor";
 import { t } from "../../locales";
 
 interface Props {

@@ -33,7 +33,7 @@ import { ChatUIKit } from "../../index";
 import { t } from "../../locales";
 import { Chat } from "../../sdk";
 import { autorun } from "mobx";
-import { ref, onUnmounted } from "vue";
+import { ref, onUnmounted } from "../../composition-api-adaptor";
 
 const contactList = ref<Chat.ContactItem[]>([]);
 

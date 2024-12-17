@@ -42,7 +42,7 @@
 
 <script lang="ts" setup>
 import { renderTxt } from "../../../../utils/index";
-import { ref, computed, onUnmounted, CSSProperties } from "vue";
+import { ref, computed, onUnmounted } from "../../../../composition-api-adaptor";
 import { formatMessage, deepClone } from "../../../../utils/index";
 import { ChatUIKit } from "../../../../index";
 import { t } from "../../../../locales/index";
@@ -55,7 +55,7 @@ interface Props {
   msgId?: string; // 存在msgId时，根据msgId获取消息, 否则获取quoteMessage
   isReplying?: boolean; // 是否是回复消息
   messageQuoteExt?: MessageQuoteExt;
-  titleStyle?: CSSProperties;
+  titleStyle?: any;
 }
 
 const props = defineProps<Props>();

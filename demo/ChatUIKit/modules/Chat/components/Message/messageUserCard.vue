@@ -19,7 +19,7 @@ import { USER_AVATAR_URL } from "../../../../const";
 import { Chat } from "../../../../types";
 import { ChatUIKit } from "../../../../index";
 import { t } from "../../../../locales";
-import { computed } from "vue";
+import { computed } from "../../../../composition-api-adaptor";
 
 interface Props {
   msg: Chat.CustomMsgBody;

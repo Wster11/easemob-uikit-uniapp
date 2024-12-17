@@ -79,7 +79,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed } from "vue";
+import { ref, computed } from "../../composition-api-adaptor";
 import { groupByName } from "../../utils/index";
 
 let timerId: any = "";

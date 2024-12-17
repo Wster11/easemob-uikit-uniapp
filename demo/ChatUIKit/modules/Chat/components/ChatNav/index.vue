@@ -22,7 +22,7 @@
 <script setup lang="ts">
 import Avatar from "../../../../components/Avatar/index.vue";
 import NavBar from "../../../../components/NavBar/index.vue";
-import { ref, computed, onMounted, onUnmounted } from "vue";
+import { ref, computed, onMounted, onUnmounted } from "../../../../composition-api-adaptor";
 import { ChatUIKit } from "../../../../index";
 import { Chat } from "../../../../types";
 import { USER_AVATAR_URL, GROUP_AVATAR_URL } from "../../../../const";

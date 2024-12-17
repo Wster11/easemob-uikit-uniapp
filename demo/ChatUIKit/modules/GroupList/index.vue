@@ -24,7 +24,7 @@ import Empty from "../../components/Empty/index.vue";
 import NavBar from "../../components/NavBar/index.vue";
 import type { Chat } from "../../sdk";
 import { ChatUIKit } from "../../index";
-import { ref, onUnmounted } from "vue";
+import { ref, onUnmounted } from "../../composition-api-adaptor";
 import { t } from "../../locales/index";
 import { autorun } from "mobx";
 

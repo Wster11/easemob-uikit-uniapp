@@ -33,7 +33,7 @@
 import type { Chat } from "../../../../types/index";
 import { ChatUIKit } from "../../../../index";
 import { ASSETS_URL } from "../../../../const/index";
-import { ref, onUnmounted, watch } from "vue";
+import { ref, onUnmounted, watch } from "../../../../composition-api-adaptor";
 
 const ReceiveAudioIcon = ASSETS_URL + "icon/receiveAudio.png";
 const SendAudioIcon = ASSETS_URL + "icon/sendAudio.png";

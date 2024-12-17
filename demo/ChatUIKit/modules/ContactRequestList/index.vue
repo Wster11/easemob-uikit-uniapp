@@ -25,7 +25,7 @@ import RequestItem from "./components/RequestItem/index.vue";
 import { t } from "../../locales/index";
 import { ChatUIKit } from "../../index";
 import { ContactNotice } from "../../types/index";
-import { ref, onUnmounted } from "vue";
+import { ref, onUnmounted } from "../../composition-api-adaptor";
 import { autorun } from "mobx";
 
 const contactApplyRequestList = ref<ContactNotice[]>([]);

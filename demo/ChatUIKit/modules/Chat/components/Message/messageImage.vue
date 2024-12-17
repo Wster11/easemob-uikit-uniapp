@@ -15,10 +15,10 @@
 <script lang="ts" setup>
 import type { Chat } from "../../../../types/index";
 import { ASSETS_URL } from "../../../../const/index";
+import { ref } from "../../../../composition-api-adaptor";
 
 const ImageNotFound = ASSETS_URL + "img404.png";
 
-import { ref } from "vue";
 interface Props {
   msg: Chat.ImgMsgBody;
   mode?: string; // uni image mode

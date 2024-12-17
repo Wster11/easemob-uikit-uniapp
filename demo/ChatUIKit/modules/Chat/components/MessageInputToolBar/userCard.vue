@@ -6,7 +6,7 @@
 
 <script lang="ts" setup>
 import type { InputToolbarEvent } from "../../../../types/index";
-import { inject } from "vue";
+import { inject } from "../../../../composition-api-adaptor";
 import ItemContainer from "./itemContainer.vue";
 import { ASSETS_URL } from "../../../../const/index";
 import { t } from "../../../../locales";

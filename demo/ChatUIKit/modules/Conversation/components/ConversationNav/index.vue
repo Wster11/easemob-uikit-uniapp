@@ -42,7 +42,7 @@
 import Avatar from "../../../../components/Avatar/index.vue";
 import NavBar from "../../../../components/NavBar/index.vue";
 import PopMenu from "../../../../components/PopMenu/index.vue";
-import { ref, onUnmounted } from "vue";
+import { ref, onUnmounted } from "../../../../composition-api-adaptor";
 import { ChatUIKit } from "../../../../index";
 import { t } from "../../../../locales/index";
 import { USER_AVATAR_URL, ASSETS_URL } from "../../../../const/index";

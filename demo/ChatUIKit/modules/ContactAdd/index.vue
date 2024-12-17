@@ -28,7 +28,7 @@ import NavBar from "../../components/NavBar/index.vue";
 import UIKITButton from "../../components/Button/index.vue";
 import { t } from "../../locales/index";
 import { ChatUIKit } from "../../index";
-import { ref } from "vue";
+import { ref } from "../../composition-api-adaptor";
 
 const userId = ref("");
 

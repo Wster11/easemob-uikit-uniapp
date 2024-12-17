@@ -28,7 +28,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed, onMounted } from "vue";
+import { ref, computed, onMounted } from "../../../../composition-api-adaptor";
 import type { MixedMessageBody } from "../../../../types/index";
 import { ChatUIKit } from "../../../../index";
 import { ASSETS_URL } from "../../../../const/index";

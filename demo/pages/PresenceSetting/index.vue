@@ -68,7 +68,7 @@ import { PRESENCE_STATUS_LIST } from "../../ChatUIKit/const";
 import { t } from "../../const/locales";
 import { autorun } from "mobx";
 import Modal from "../../ChatUIKit/components/Modal/index.vue";
-import { ref, computed, onUnmounted } from "vue";
+import { ref, computed, onUnmounted } from "../../ChatUIKit/composition-api-adaptor";
 
 const presenceExt = ref("");
 const customPresence = ref(t("presenceCustom"));

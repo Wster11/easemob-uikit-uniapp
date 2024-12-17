@@ -4,7 +4,7 @@
   </view>
 </template>
 <script setup lang="ts">
-import { ref, watch } from "vue";
+import { ref, watch } from "../../../../composition-api-adaptor";
 import { getTimeStringAutoShort } from "../../../../utils/index";
 interface Props {
   currTime: number;
