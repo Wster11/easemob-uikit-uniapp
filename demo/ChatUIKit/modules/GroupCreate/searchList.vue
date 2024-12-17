@@ -15,7 +15,11 @@
 
     <view class="search-content" v-if="searchList.length">
       <checkbox-group @change="checkboxChange">
-        <label class="label" v-for="item in searchList">
+        <label
+          class="label"
+          v-show="searchList.includes(item.userId)"
+          v-for="item in contactList"
+        >
           <checkbox
             class="checkbox"
             backgroundColor="#f9fafa"
@@ -47,7 +51,10 @@ import Empty from "../../components/Empty/index.vue";
 import { ChatUIKit } from "../../index";
 import { t } from "../../locales";
 import { ref, computed } from "../../composition-api-adaptor";
-
+import { autorun } from "mobx";
+import { Chat } from "../../../../ChatUIKit/sdk";
+import { onUnmounted } from "../../composition-api-adaptor";
+import { deepClone } from "../../utils";
 interface Props {
   checkedList: string[];
 }
@@ -55,6 +62,8 @@ interface Props {
 const props = defineProps<Props>();
 
 const emits = defineEmits(["checkboxChange", "cancel"]);
+
+const contactList = ref<Chat.ContactItem[]>([]);
 
 const searchRef = ref(null);
 
@@ -69,20 +78,32 @@ const checkboxChange = (e) => {
   emits("checkboxChange", values);
 };
 
+const unwatchContactList = autorun(() => {
+  contactList.value = deepClone(ChatUIKit.contactStore.contacts);
+});
+
 const searchList = computed(() => {
   if (!searchValue.value) {
     return [];
   }
-  return ChatUIKit.contactStore.contacts.filter((item) => {
-    return ChatUIKit.appUserStore
-      .getUserInfoFromStore(item.userId)
-      .name.includes(searchValue.value);
-  });
+  return contactList.value
+    .filter((item) => {
+      return ChatUIKit.appUserStore
+        .getUserInfoFromStore(item.userId)
+        .name.includes(searchValue.value);
+    })
+    .map((filterItem) => {
+      return filterItem.userId;
+    });
 });
 
 const cancelSearch = () => {
   emits("cancel");
 };
+
+onUnmounted(() => {
+  unwatchContactList();
+});
 </script>
 
 <style lang="scss" scoped>

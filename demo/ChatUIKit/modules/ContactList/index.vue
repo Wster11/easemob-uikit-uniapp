@@ -2,43 +2,39 @@
   <view class="contact-list-wrap">
     <view class="header-wrap">
       <ContactNav />
-      <SearchButton @tap="toSearchPage" class="contact-search" />
+      <view @tap="toSearchPage">
+        <SearchButton class="contact-search" />
+      </view>
     </view>
     <!-- nav占位 -->
     <view :class="isWXProgram ? 'wx-block' : 'block'"></view>
     <IndexedList class="contact-index-list" :options="contactList">
       <template v-slot:header>
         <view class="contact-menu-wrap">
-          <MenuItem
-            @tap="toRequestListPage"
-            class="contact-menu"
-            :title="t('newRequest')"
-          >
-            <template v-slot:right>
-              <view class="request-count" v-if="contactRequestCount">
-                {{ contactRequestCount > 99 ? "99+" : contactRequestCount }}
-              </view>
-            </template>
-          </MenuItem>
-
-          <MenuItem
-            @tap="toGroupPage"
-            class="contact-menu"
-            :title="t('groupList')"
-          >
-            <template v-slot:right>
-              <view class="count" v-if="joinedGroupCount">
-                {{ joinedGroupCount }}
-              </view>
-            </template>
-          </MenuItem>
+          <view @tap="toRequestListPage">
+            <MenuItem class="contact-menu" :title="t('newRequest')">
+              <template v-slot:right>
+                <view class="request-count" v-if="contactRequestCount">
+                  {{ contactRequestCount > 99 ? "99+" : contactRequestCount }}
+                </view>
+              </template>
+            </MenuItem>
+          </view>
+          <view @tap="toGroupPage">
+            <MenuItem class="contact-menu" :title="t('groupList')">
+              <template v-slot:right>
+                <view class="count" v-if="joinedGroupCount">
+                  {{ joinedGroupCount }}
+                </view>
+              </template>
+            </MenuItem>
+          </view>
         </view>
       </template>
       <template v-slot:indexedItem="slotProps">
-        <UserItem
-          :user="slotProps.item"
-          @tap="toChatPage(slotProps.item.userId)"
-        />
+        <view @tap="toChatPage(slotProps.item.userId)">
+          <UserItem :user="slotProps.item" />
+        </view>
       </template>
     </IndexedList>
   </view>
@@ -119,7 +115,7 @@ onUnmounted(() => {
 }
 
 .block {
-  height: calc(104px + var(--status-bar-height))
+  height: calc(104px + var(--status-bar-height));
 }
 
 .wx-block {

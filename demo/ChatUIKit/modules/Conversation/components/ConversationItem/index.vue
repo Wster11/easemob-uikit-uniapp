@@ -39,12 +39,18 @@
             </view>
             <view
               class="last-msg ellipsis"
-              v-if="conversation.lastMessage?.type === 'txt'"
+              v-if="
+                conversation.lastMessage &&
+                conversation.lastMessage.type === 'txt'
+              "
             >
               <span
                 v-if="
                   conversation.conversationType === 'groupChat' &&
-                  !conversation.lastMessage?.noticeInfo
+                  !(
+                    conversation.lastMessage &&
+                    conversation.lastMessage.noticeInfo
+                  )
                 "
                 >{{ getLastMsgFrom(conversation.lastMessage) }}:
               </span>
@@ -96,7 +102,11 @@
 <script setup lang="ts">
 import Avatar from "../../../../components/Avatar/index.vue";
 import { t } from "../../../../locales/index";
-import { ref, onUnmounted, computed } from "../../../../composition-api-adaptor";
+import {
+  ref,
+  onUnmounted,
+  computed
+} from "../../../../composition-api-adaptor";
 import { ChatUIKit } from "../../../../index";
 import { renderTxt, formatMessage } from "../../../../utils/index";
 import { USER_AVATAR_URL, GROUP_AVATAR_URL } from "../../../../const/index";

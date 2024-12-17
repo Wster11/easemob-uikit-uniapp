@@ -26,6 +26,7 @@ import type { Chat } from "../../sdk";
 import { ChatUIKit } from "../../index";
 import { ref, onUnmounted } from "../../composition-api-adaptor";
 import { t } from "../../locales/index";
+import { deepClone } from "../../utils/index";
 import { autorun } from "mobx";
 
 const groupList = ref<Chat.GroupInfo[]>([]);
@@ -35,7 +36,7 @@ const onBack = () => {
 };
 
 const unwatchGroupList = autorun(() => {
-  groupList.value = ChatUIKit.groupStore.joinedGroupList;
+  groupList.value = deepClone(ChatUIKit.groupStore.joinedGroupList);
 });
 
 const toChatPage = (id: string) => {

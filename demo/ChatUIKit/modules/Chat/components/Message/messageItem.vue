@@ -133,7 +133,7 @@ const bubbleClass = computed(() => {
 const onMessageBubblePress = (e) => {
   emits("onLongPress", props.msg.id);
   setTimeout(() => {
-    actionRef?.value?.handleLongPress(e, instance);
+    actionRef?.value?.handleLongPress(e, instance.proxy);
   }, 0);
 };
 </script>

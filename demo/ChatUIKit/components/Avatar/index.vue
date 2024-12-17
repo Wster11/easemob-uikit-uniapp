@@ -1,7 +1,7 @@
 <template>
   <view
-    :class="['avatar', shape]"
-    :style="{ width: size + 'px', height: size + 'px' }"
+    :class="['avatar', avatarShape]"
+    :style="{ width: avatarSize + 'px', height: avatarSize + 'px' }"
   >
     <image
       class="image"
@@ -79,8 +79,8 @@ const imageSrc = computed(() => {
   }
   return props.src || props.placeholder;
 });
-const size = props.size || 50; // 默认大小为50px
-const shape = props.shape || ChatUIKit.getThemeConfig().avatarShape;
+const avatarSize = props.size || 50; // 默认大小为50px
+const avatarShape = props.shape || ChatUIKit.getThemeConfig().avatarShape;
 
 const onError = () => {
   isError.value = true;

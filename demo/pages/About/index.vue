@@ -17,19 +17,16 @@
     </view>
     <view class="content">
       <view class="menu-wrap">
-        <MenuItem
-          class="about-menu"
-          v-for="item in menus"
-          :key="item.title"
-          @tap="onMenuTap(item)"
-        >
-          <template v-slot:left>
-            <view class="left-content">
-              <view class="title">{{ item.title }}</view>
-              <view class="link">{{ item.link }}</view>
-            </view>
-          </template>
-        </MenuItem>
+        <view v-for="item in menus" :key="item.title" @tap="onMenuTap(item)">
+          <MenuItem class="about-menu">
+            <template v-slot:left>
+              <view class="left-content">
+                <view class="title">{{ item.title }}</view>
+                <view class="link">{{ item.link }}</view>
+              </view>
+            </template>
+          </MenuItem>
+        </view>
       </view>
     </view>
   </view>

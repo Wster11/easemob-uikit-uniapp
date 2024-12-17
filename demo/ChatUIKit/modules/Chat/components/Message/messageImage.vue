@@ -1,7 +1,7 @@
 <template>
   <view class="msg-image">
     <image
-      :mode="mode"
+      :mode="imageMode"
       :style="{ width: styles.width, height: styles.height }"
       @error="onError"
       @tap="previewImage"
@@ -35,7 +35,7 @@ const styles = ref({
   width,
   height
 });
-const mode = props.mode || "aspectFit";
+const imageMode = props.mode || "aspectFit";
 
 const onError = () => {
   isError.value = true;

@@ -6,16 +6,24 @@
           <view v-if="noticeType === 'recall'">
             {{
               `"${
-                appUserStore.getUserInfoFromStore(msg?.noticeInfo?.ext?.from)
-                  .name
+                appUserStore.getUserInfoFromStore(
+                  msg &&
+                    msg.noticeInfo &&
+                    msg.noticeInfo.ext &&
+                    msg.noticeInfo.ext.from
+                ).name
               }" ${t("recallNotice")}`
             }}
           </view>
           <view v-else-if="noticeType === 'group'">
             {{
               `"${
-                appUserStore.getUserInfoFromStore(msg?.noticeInfo?.ext?.from)
-                  .name
+                appUserStore.getUserInfoFromStore(
+                  msg &&
+                    msg.noticeInfo &&
+                    msg.noticeInfo.ext &&
+                    msg.noticeInfo.ext.from
+                ).name
               }" ${noticeExt.operation} ${t("group")}`
             }}
           </view>
@@ -34,9 +42,8 @@ interface Props {
 }
 const appUserStore = ChatUIKit.appUserStore;
 const props = defineProps<Props>();
-const { msg } = props;
-const noticeExt = msg.noticeInfo?.ext || {};
-const noticeType = msg.noticeInfo?.noticeType;
+const noticeExt = props.msg.noticeInfo?.ext || {};
+const noticeType = props.msg.noticeInfo?.noticeType;
 </script>
 
 <style lang="scss" scoped>

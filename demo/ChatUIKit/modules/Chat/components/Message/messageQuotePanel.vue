@@ -15,7 +15,7 @@ import { autorun } from "mobx";
 
 const quoteMsg = ref(null);
 
-autorun(() => {
+const unwatchQuoteMsg = autorun(() => {
   quoteMsg.value = ChatUIKit.messageStore.quoteMessage;
 });
 
@@ -24,6 +24,7 @@ const cancelQuote = () => {
 };
 
 onUnmounted(() => {
+  unwatchQuoteMsg();
   cancelQuote();
 });
 </script>

@@ -21,25 +21,27 @@
         {{ t("meSettingGroupName") }}
       </view>
       <view class="menu-wrap">
-        <MenuItem
-          class="me-menu"
-          :title="t('meStatus')"
-          @tap="toPresenceSetting"
-        >
-          <template v-slot:left>
-            <view class="icon status"> </view>
-          </template>
-        </MenuItem>
-        <MenuItem class="me-menu" :title="t('meInfo')" @tap="toProfile">
-          <template v-slot:left>
-            <view class="icon person"> </view>
-          </template>
-        </MenuItem>
-        <MenuItem class="me-menu" :title="t('meAbout')" @tap="toAbout">
-          <template v-slot:left>
-            <view class="icon about"> </view>
-          </template>
-        </MenuItem>
+        <view @tap="toPresenceSetting">
+          <MenuItem class="me-menu" :title="t('meStatus')">
+            <template v-slot:left>
+              <view class="icon status"> </view>
+            </template>
+          </MenuItem>
+        </view>
+        <view @tap="toProfile">
+          <MenuItem class="me-menu" :title="t('meInfo')">
+            <template v-slot:left>
+              <view class="icon person"> </view>
+            </template>
+          </MenuItem>
+        </view>
+        <view @tap="toAbout">
+          <MenuItem class="me-menu" :title="t('meAbout')">
+            <template v-slot:left>
+              <view class="icon about"> </view>
+            </template>
+          </MenuItem>
+        </view>
       </view>
       <view class="menu-group-name">
         {{ t("meLoginGroupName") }}

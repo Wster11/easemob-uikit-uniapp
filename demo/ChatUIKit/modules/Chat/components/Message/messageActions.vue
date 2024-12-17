@@ -13,7 +13,7 @@
         class="operate-item"
         v-for="(menuItem, idx) in menuItems"
         :key="idx"
-        @click.stop="menuItem.action(item, index)"
+        @click.stop="menuItem.action(menuItem, idx)"
       >
         <image
           :src="menuItem.icon"
@@ -206,7 +206,7 @@ const copyMessage = () => {
 };
 
 const quoteMessage = () => {
-  ChatUIKit.messageStore.setQuoteMessage(props.msg);
+  ChatUIKit.messageStore.setQuoteMessage(props.msg); 
   showActions.value = false;
 };
 

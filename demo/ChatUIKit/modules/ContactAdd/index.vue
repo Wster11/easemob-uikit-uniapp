@@ -14,8 +14,8 @@
           :placeholder="t('contactAddInputPlaceholder')"
         />
       </view>
-      <view class="btn-wrap">
-        <UIKITButton :disabled="!userId.length" @tap="addContact">
+      <view class="btn-wrap" @tap="addContact">
+        <UIKITButton :disabled="!userId.length">
           {{ t("contactAddBtn") }}
         </UIKITButton>
       </view>

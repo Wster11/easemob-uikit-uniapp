@@ -6,29 +6,25 @@
       </template>
     </NavBar>
     <view class="menu-wrap">
-      <MenuItem
-        class="profile-menu"
-        :title="t('profileAvatar')"
-        @tap="changeAvatar"
-      >
-        <template v-slot:right>
-          <Avatar
-            class="profile-avatar"
-            :src="userInfo.avatar"
-            :size="40"
-            :placeholder="USER_AVATAR_URL"
-          />
-        </template>
-      </MenuItem>
-      <MenuItem
-        class="profile-menu"
-        :title="t('profileNick')"
-        @tap="toProfileSetting"
-      >
-        <template v-slot:right>
-          <view class="profile-name ellipsis">{{ userInfo.name }}</view>
-        </template>
-      </MenuItem>
+      <view @tap="changeAvatar">
+        <MenuItem class="profile-menu" :title="t('profileAvatar')">
+          <template v-slot:right>
+            <Avatar
+              class="profile-avatar"
+              :src="userInfo.avatar"
+              :size="40"
+              :placeholder="USER_AVATAR_URL"
+            />
+          </template>
+        </MenuItem>
+      </view>
+      <view @tap="toProfileSetting">
+        <MenuItem class="profile-menu" :title="t('profileNick')">
+          <template v-slot:right>
+            <view class="profile-name ellipsis">{{ userInfo.name }}</view>
+          </template>
+        </MenuItem>
+      </view>
     </view>
   </view>
 </template>

@@ -51,8 +51,8 @@
       </view>
     </Modal>
 
-    <view class="presence-btn-wrap">
-      <UIKITButton class="presence-btn" @tap="publishPresence">
+    <view class="presence-btn-wrap" @tap="publishPresence">
+      <UIKITButton class="presence-btn">
         {{ t("presenceConfirm") }}
       </UIKITButton>
     </view>
@@ -68,7 +68,11 @@ import { PRESENCE_STATUS_LIST } from "../../ChatUIKit/const";
 import { t } from "../../const/locales";
 import { autorun } from "mobx";
 import Modal from "../../ChatUIKit/components/Modal/index.vue";
-import { ref, computed, onUnmounted } from "../../ChatUIKit/composition-api-adaptor";
+import {
+  ref,
+  computed,
+  onUnmounted
+} from "../../ChatUIKit/composition-api-adaptor";
 
 const presenceExt = ref("");
 const customPresence = ref(t("presenceCustom"));
@@ -147,7 +151,6 @@ onUnmounted(() => {
 </script>
 
 <style lang="scss" scoped>
-
 .presence-menu {
   width: 100%;
   padding: 0 16px;

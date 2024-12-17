@@ -26,15 +26,17 @@ import { t } from "../../locales/index";
 import { ChatUIKit } from "../../index";
 import { ContactNotice } from "../../types/index";
 import { ref, onUnmounted } from "../../composition-api-adaptor";
+import { deepClone } from "../../utils";
 import { autorun } from "mobx";
 
 const contactApplyRequestList = ref<ContactNotice[]>([]);
 
 const unwatchContactApplyRequestList = autorun(() => {
-  contactApplyRequestList.value =
-    ChatUIKit.contactStore.contactsNoticeInfo.list.filter((info) => {
-      return info.ext === "invited";
-    });
+  contactApplyRequestList.value = deepClone(
+    ChatUIKit.contactStore.contactsNoticeInfo.list
+  ).filter((info) => {
+    return info.ext === "invited";
+  });
 });
 
 const onBack = () => {
