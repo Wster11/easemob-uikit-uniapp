@@ -24,12 +24,8 @@
       <view class="empty-wrap" v-else>
         <Empty />
       </view>
-      <view class="create-btn-wrap">
-        <UIKITButton
-          class="crate-btn"
-          :disabled="!selectedUserIds.length"
-          @tap="createGroup"
-        >
+      <view class="create-btn-wrap" @tap="createGroup">
+        <UIKITButton class="crate-btn" :disabled="!selectedUserIds.length">
           {{ t("createGroupBtn") + "(" + selectedUserIds.length + ")" }}
         </UIKITButton>
       </view>

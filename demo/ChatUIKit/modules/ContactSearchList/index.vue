@@ -13,13 +13,13 @@
       </template>
     </NavBar>
     <view class="search-content" v-if="searchList.length">
-      <view class="search-item">
-        <UserItem
-          v-for="item in searchList"
-          :key="item.conversationId"
-          @tap="toChatPage(item)"
-          :user="{ userId: item.userId }"
-        />
+      <view
+        v-for="item in searchList"
+        :key="item.conversationId"
+        class="search-item"
+        @tap="toChatPage(item)"
+      >
+        <UserItem :user="{ userId: item.userId }" />
       </view>
     </view>
     <Empty v-else />

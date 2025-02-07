@@ -16,7 +16,9 @@
       :options="contactList"
     >
       <template v-slot:indexedItem="slotProps">
-        <UserItem @tap="toChatPage(slotProps.item)" :user="slotProps.item" />
+        <view @tap="toChatPage(slotProps.item)">
+          <UserItem :user="slotProps.item" />
+        </view>
       </template>
     </IndexedList>
     <Empty v-else />
