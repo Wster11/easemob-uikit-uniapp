@@ -1,7 +1,7 @@
 <template>
   <view class="search-btn">
     <view class="search-icon"></view>
-    <view>{{ placeholder }}</view>
+    <view>{{ searchPlaceholder }}</view>
   </view>
 </template>
 
@@ -13,7 +13,7 @@ interface Props {
 
 const props = defineProps<Props>();
 
-const placeholder = props.placeholder || t("searchPlaceholder");
+const searchPlaceholder = props.placeholder || t("searchPlaceholder");
 </script>
 
 <style lang="scss" scoped>

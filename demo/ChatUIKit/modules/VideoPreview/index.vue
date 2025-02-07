@@ -11,7 +11,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
+import { ref } from "../../vue.adaptor";
 import { onLoad } from "@dcloudio/uni-app";
 import { isSafari, isiOS, isWechat } from "../../utils/index";
 

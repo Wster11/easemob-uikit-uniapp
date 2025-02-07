@@ -33,7 +33,7 @@
 <script setup lang="ts">
 import Avatar from "../../../../components/Avatar/index.vue";
 import NavBar from "../../../../components/NavBar/index.vue";
-import { ref, onUnmounted } from "vue";
+import { ref, onUnmounted } from "../../../../vue.adaptor";
 import { ChatUIKit } from "../../../../index";
 import { USER_AVATAR_URL } from "../../../../const";
 import { UserInfoWithPresence } from "../../../../types/index";

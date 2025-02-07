@@ -9,29 +9,29 @@
     <IndexedList class="contact-index-list" :options="contactList">
       <template v-slot:header>
         <view class="contact-menu-wrap">
-          <MenuItem
-            @tap="toRequestListPage"
-            class="contact-menu"
-            :title="t('newRequest')"
-          >
-            <template v-slot:right>
-              <view class="request-count" v-if="contactRequestCount">
-                {{ contactRequestCount > 99 ? "99+" : contactRequestCount }}
-              </view>
-            </template>
-          </MenuItem>
+          <view @tap="toRequestListPage">
+            <MenuItem class="contact-menu" :title="t('newRequest')">
+              <template v-slot:right>
+                <view class="request-count" v-if="contactRequestCount">
+                  {{ contactRequestCount > 99 ? "99+" : contactRequestCount }}
+                </view>
+              </template>
+            </MenuItem>
+          </view>
 
-          <MenuItem
-            @tap="toGroupPage"
-            class="contact-menu"
-            :title="t('groupList')"
-          >
-            <template v-slot:right>
-              <view class="count" v-if="joinedGroupCount">
-                {{ joinedGroupCount }}
-              </view>
-            </template>
-          </MenuItem>
+          <view @tap="toGroupPage">
+            <MenuItem
+              @tap="toGroupPage"
+              class="contact-menu"
+              :title="t('groupList')"
+            >
+              <template v-slot:right>
+                <view class="count" v-if="joinedGroupCount">
+                  {{ joinedGroupCount }}
+                </view>
+              </template>
+            </MenuItem>
+          </view>
         </view>
       </template>
       <template v-slot:indexedItem="slotProps">
@@ -53,7 +53,7 @@ import ContactNav from "./components/ContactNav/index.vue";
 import type { Chat } from "../../sdk";
 import { t } from "../../locales/index";
 import { ChatUIKit } from "../../index";
-import { ref, onUnmounted } from "vue";
+import { ref, onUnmounted } from "../../vue.adaptor";
 import { isWXProgram } from "../../utils/index";
 import { autorun } from "mobx";
 
@@ -119,7 +119,7 @@ onUnmounted(() => {
 }
 
 .block {
-  height: calc(104px + var(--status-bar-height))
+  height: calc(104px + var(--status-bar-height));
 }
 
 .wx-block {

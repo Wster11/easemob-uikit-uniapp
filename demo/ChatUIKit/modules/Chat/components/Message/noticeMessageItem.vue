@@ -6,16 +6,24 @@
           <view v-if="noticeType === 'recall'">
             {{
               `"${
-                appUserStore.getUserInfoFromStore(msg?.noticeInfo?.ext?.from)
-                  .name
+                appUserStore.getUserInfoFromStore(
+                  msg &&
+                    msg.noticeInfo &&
+                    msg.noticeInfo.ext &&
+                    msg.noticeInfo.ext.from
+                ).name
               }" ${t("recallNotice")}`
             }}
           </view>
           <view v-else-if="noticeType === 'group'">
             {{
               `"${
-                appUserStore.getUserInfoFromStore(msg?.noticeInfo?.ext?.from)
-                  .name
+                appUserStore.getUserInfoFromStore(
+                  msg &&
+                    msg.noticeInfo &&
+                    msg.noticeInfo.ext &&
+                    msg.noticeInfo.ext.from
+                ).name
               }" ${noticeExt.operation} ${t("group")}`
             }}
           </view>

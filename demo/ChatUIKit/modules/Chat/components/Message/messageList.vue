@@ -34,7 +34,7 @@
           :prev-time="idx > 0 ? msgs[idx - 1].time : 0"
         /> -->
         <NoticeMessageItem
-          v-if="msg?.noticeInfo?.type === 'notice'"
+          v-if="msg && msg.noticeInfo && msg.noticeInfo.type === 'notice'"
           :msg="msg"
         />
         <MessageItem
@@ -53,7 +53,7 @@
 import MessageItem from "./messageItem.vue";
 import MessageTime from "./messageTime.vue";
 import NoticeMessageItem from "./noticeMessageItem.vue";
-import { ref, onMounted, onUnmounted, nextTick } from "vue";
+import { ref, onMounted, onUnmounted, nextTick } from "../../../../vue.adaptor";
 import type { MixedMessageBody, Chat } from "../../../../types/index";
 import { ChatUIKit } from "../../../../index";
 import { autorun } from "mobx";

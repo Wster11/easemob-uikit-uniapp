@@ -18,7 +18,7 @@ import { ASSETS_URL } from "../../../../const/index";
 
 const ImageNotFound = ASSETS_URL + "img404.png";
 
-import { ref } from "vue";
+import { ref } from "../../../../vue.adaptor";
 interface Props {
   msg: Chat.ImgMsgBody;
   mode?: string; // uni image mode
