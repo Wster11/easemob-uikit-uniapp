@@ -51,8 +51,8 @@
       </view>
     </Modal>
 
-    <view class="presence-btn-wrap">
-      <UIKITButton class="presence-btn" @tap="publishPresence">
+    <view class="presence-btn-wrap" @tap="publishPresence">
+      <UIKITButton class="presence-btn">
         {{ t("presenceConfirm") }}
       </UIKITButton>
     </view>

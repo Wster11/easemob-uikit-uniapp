@@ -2,7 +2,9 @@
   <view class="contact-list-wrap">
     <view class="header-wrap">
       <ContactNav />
-      <SearchButton @tap="toSearchPage" class="contact-search" />
+      <view @tap="toSearchPage">
+        <SearchButton class="contact-search" />
+      </view>
     </view>
     <!-- nav占位 -->
     <view :class="isWXProgram ? 'wx-block' : 'block'"></view>
@@ -35,10 +37,9 @@
         </view>
       </template>
       <template v-slot:indexedItem="slotProps">
-        <UserItem
-          :user="slotProps.item"
-          @tap="toChatPage(slotProps.item.userId)"
-        />
+        <view @tap="toChatPage(slotProps.item.userId)">
+          <UserItem :user="slotProps.item" />
+        </view>
       </template>
     </IndexedList>
   </view>

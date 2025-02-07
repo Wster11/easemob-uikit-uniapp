@@ -16,13 +16,8 @@
       <view class="version">UIKIT Version 1.0.0 </view>
     </view>
     <view class="content">
-      <view class="menu-wrap">
-        <MenuItem
-          class="about-menu"
-          v-for="item in menus"
-          :key="item.title"
-          @tap="onMenuTap(item)"
-        >
+      <view class="menu-wrap" @tap="onMenuTap(item)">
+        <MenuItem class="about-menu" v-for="item in menus" :key="item.title">
           <template v-slot:left>
             <view class="left-content">
               <view class="title">{{ item.title }}</view>

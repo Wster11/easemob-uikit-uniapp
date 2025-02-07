@@ -1,9 +1,9 @@
 <template>
   <view class="tool-item-wrap">
     <view class="icon-wrap">
-      <image class="icon" :src="iconUrl"></image>
+      <image class="icon" :src="props.iconUrl"></image>
     </view>
-    <view>{{ title }}</view>
+    <view>{{ props.title }}</view>
   </view>
 </template>
 
@@ -13,8 +13,6 @@ interface Props {
   iconUrl: string;
 }
 const props = defineProps<Props>();
-
-const { title, iconUrl } = props;
 </script>
 
 <style lang="scss" scoped>

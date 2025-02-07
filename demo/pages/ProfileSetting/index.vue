@@ -17,8 +17,8 @@
       <view class="count"> {{ inputValue.length }} / 128 </view>
     </view>
 
-    <view class="profile-btn-wrap">
-      <UIKITButton class="profile-btn" :disabled="disabled" @tap="updateNickName">
+    <view class="profile-btn-wrap" @tap="updateNickName">
+      <UIKITButton class="profile-btn" :disabled="disabled">
         {{ t("presenceConfirm") }}
       </UIKITButton>
     </view>
