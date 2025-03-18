@@ -89,6 +89,9 @@ class AppUserStore {
           ) {
             isOnline = true;
           }
+          if (item.uid === ChatUIKit.getChatConn().user) {
+            isOnline = true;
+          }
           this.setUserPresence(item.uid, {
             presenceExt: ext,
             isOnline

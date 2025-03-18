@@ -56,6 +56,8 @@ const showPresence = computed(() => {
 const presenceClass = computed(() => {
   if (props.isOnline) {
     switch (props.presenceExt) {
+      case "":
+        return "online";
       case "Online":
         return "online";
       case "Offline":

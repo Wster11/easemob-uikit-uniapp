@@ -20,7 +20,7 @@ const chat = new (websdk as unknown as EasemobChatStatic).connection({
   delivery: true
 });
 
-websdk.logger.disableAll();
+// websdk.logger.disableAll();
 
 ChatUIKit.init({
   chat,
