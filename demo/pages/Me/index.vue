@@ -30,11 +30,11 @@
             <view class="icon status"> </view>
           </template>
         </MenuItem>
-        <MenuItem class="me-menu" :title="t('meInfo')" @tap="toProfile">
+        <!-- <MenuItem class="me-menu" :title="t('meInfo')" @tap="toProfile">
           <template v-slot:left>
             <view class="icon person"> </view>
           </template>
-        </MenuItem>
+        </MenuItem> -->
         <MenuItem class="me-menu" :title="t('meAbout')" @tap="toAbout">
           <template v-slot:left>
             <view class="icon about"> </view>

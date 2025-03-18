@@ -9,11 +9,12 @@ import {
 } from "@/const/index";
 import websdk from "easemob-websdk/uniApp/Easemob-chat";
 import { EasemobChatStatic } from "easemob-websdk/Easemob-chat";
+import GroupNewAvatar from "./ChatUIKit/assets/groupNew.png";
 import { autorun, runInAction } from "mobx";
 
 const chat = new (websdk as unknown as EasemobChatStatic).connection({
   appKey: APPKEY,
-  isHttpDNS: false,
+  isHttpDNS: true,
   url: URL,
   apiUrl: API_URL,
   delivery: true
@@ -25,13 +26,32 @@ ChatUIKit.init({
   chat,
   config: {
     theme: {
-      avatarShape: "square"
+      avatarShape: "circle"
     },
-    isDebug: true
+    isDebug: false
   }
 });
 
-// ChatUIKit.hideFeature(["useUserInfo", "usePresence"]);
+ChatUIKit.hideFeature(["useUserInfo"]);
+
+ChatUIKit.getChatConn().addEventHandler("chat", {
+  onMessage: (messages) => {
+    messages.forEach((message) => {
+      if (message.chatType === "singleChat") {
+        const { ease_chat_uikit_user_info } = message.ext || {};
+        const { nickname, avatarURL } = ease_chat_uikit_user_info || {};
+        if (
+          !ChatUIKit.appUserStore.getUserInfoFromStore(message.from).nickname
+        ) {
+          ChatUIKit.appUserStore.setUserInfo(message.from, {
+            nickname: nickname,
+            avatarurl: avatarURL
+          });
+        }
+      }
+    });
+  }
+});
 
 // 手动设置用户属性
 // ChatUIKit.appUserStore.setUserInfo("0c1bdd28c7", {
@@ -63,15 +83,14 @@ autorun(() => {
 const getGroupAvatarUrl = async (groupIds: string[]) => {
   for (let groupId of groupIds) {
     try {
-      const res = await uni.request({
-        url: getInsideGroupAvatarUrl(groupId),
-        header: {
-          Authorization: "Bearer " + ChatUIKit.getChatConn().accessToken
-        }
-      });
+      const res = await ChatUIKit.groupStore.getGroupInfo(groupId);
       runInAction(() => {
         // 设置群组头像
-        ChatUIKit.groupStore.setGroupAvatar(groupId, res.data.avatarUrl);
+        //@ts-ignore
+        ChatUIKit.groupStore.setGroupAvatar(
+          groupId,
+          res.data[0].avatar || GroupNewAvatar
+        );
       });
     } catch (error) {
       console.error("Failed to fetch group avatar:", groupId, error);
@@ -81,11 +100,24 @@ const getGroupAvatarUrl = async (groupIds: string[]) => {
 
 const autoLogin = async () => {
   try {
-    let res = await uni.getStorage({
-      key: CHAT_STORE
+    uni.showLoading({
+      title: "加载中"
+    });
+    const res: any = await uni.request({
+      url: "https://a1-appserver.easemob.com/inside/app/user/special/login",
+      header: {
+        "content-type": "application/json"
+      },
+      method: "POST"
     });
     // 如果存在缓存，直接登录
     if (res.data) {
+      const { chatUserName, token } = res.data;
+      await uni.$UIKit.chatStore.login({
+        user: chatUserName,
+        accessToken: token
+      });
+      uni.hideLoading();
       // 跳转会话列表页面
       uni.reLaunch({
         url: "/ChatUIKit/modules/Conversation/index",
@@ -95,18 +127,8 @@ const autoLogin = async () => {
           // #endif
         }
       });
-      const { userId, token } = res.data;
-      await uni.$UIKit.chatStore.login({
-        user: userId,
-        accessToken: token
-      });
     }
-  } catch (error) {
-    // #ifdef APP-PLUS
-    plus.navigator.closeSplashscreen();
-    // #endif
-    console.log(error, "error");
-  }
+  } catch (error) {}
 };
 
 export default {

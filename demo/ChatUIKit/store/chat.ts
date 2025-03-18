@@ -280,8 +280,7 @@ class ChatStore {
           "for group:",
           event.id
         );
-        // 群组事件暂时不处理
-        // this.handleGroupEvent(event);
+        this.handleGroupEvent(event);
       }
     });
 

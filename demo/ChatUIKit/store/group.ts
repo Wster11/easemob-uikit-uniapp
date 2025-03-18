@@ -41,7 +41,10 @@ class GroupStore {
    * 获取已加入的群组列表
    */
   getJoinedGroupList = () => {
-    logger.info("[GroupStore] Getting joined group list, page:", this.getJoinedGroupListParams.pageNum);
+    logger.info(
+      "[GroupStore] Getting joined group list, page:",
+      this.getJoinedGroupListParams.pageNum
+    );
     ChatUIKit.getChatConn()
       .getJoinedGroups(this.getJoinedGroupListParams)
       .then((res) => {
@@ -61,7 +64,10 @@ class GroupStore {
    * @param groups 群组列表
    */
   setJoinedGroupList = (groups: Chat.GroupInfo[]) => {
-    logger.info("[GroupStore] Setting joined group list, count:", groups.length);
+    logger.info(
+      "[GroupStore] Setting joined group list, count:",
+      groups.length
+    );
     const currentGroupIds = this.joinedGroupList.map((item) => item.groupId);
     const filterJoinedGroups = groups.filter(
       ({ groupId }) => !currentGroupIds.includes(groupId)
@@ -131,7 +137,10 @@ class GroupStore {
       });
       group.affiliations_count -= userIds.length;
       this.groupDetailMap.set(groupId, group);
-      logger.info("[GroupStore] Updated group affiliations count:", group.affiliations_count);
+      logger.info(
+        "[GroupStore] Updated group affiliations count:",
+        group.affiliations_count
+      );
     }
   };
 
@@ -212,7 +221,12 @@ class GroupStore {
    * @param pageNum 页码
    */
   getGroupMembers = (groupId: string, pageNum: number) => {
-    logger.info("[GroupStore] Getting group members for:", groupId, "page:", pageNum);
+    logger.info(
+      "[GroupStore] Getting group members for:",
+      groupId,
+      "page:",
+      pageNum
+    );
     return ChatUIKit.getChatConn()
       .listGroupMembers({
         groupId,
@@ -223,7 +237,11 @@ class GroupStore {
         ChatUIKit.appUserStore.getUsersInfoFromServer({
           userIdList: res.data.map((item) => item.member || item.owner) || []
         });
-        logger.info("[GroupStore] Retrieved", res.data?.length || 0, "group members");
+        logger.info(
+          "[GroupStore] Retrieved",
+          res.data?.length || 0,
+          "group members"
+        );
         return res;
       });
   };
@@ -275,7 +293,10 @@ class GroupStore {
         const res = await this.getGroupInfo(groupId);
         const info = res.data?.[0];
         if (info) {
-          logger.info("[GroupStore] Adding accepted group to joined list:", info.id);
+          logger.info(
+            "[GroupStore] Adding accepted group to joined list:",
+            info.id
+          );
           this.setJoinedGroupList([
             {
               groupId: info.id,

@@ -14,18 +14,18 @@
       <template v-slot:center>
         <view class="title"></view>
       </template>
-      <template v-slot:right>
-        <view class="btn-wrap">
-          <!-- #ifndef MP-WEIXIN-->
-          <view class="action-btn" @tap="toAddContact"></view>
-          <!-- #endif -->
-        </view>
-      </template>
+      <!-- <template v-slot:right> -->
+      <!-- <view class="btn-wrap"> -->
+      <!-- #ifndef MP-WEIXIN-->
+      <!-- <view class="action-btn" @tap="toAddContact"></view> -->
+      <!-- #endif -->
+      <!-- </view> -->
+      <!-- </template> -->
     </NavBar>
     <!-- #ifdef MP-WEIXIN-->
-    <view class="wx-btn-wrap">
+    <!-- <view class="wx-btn-wrap">
       <view class="wx-btn" @tap="toAddContact"></view>
-    </view>
+    </view> -->
     <!-- #endif -->
   </view>
 </template>

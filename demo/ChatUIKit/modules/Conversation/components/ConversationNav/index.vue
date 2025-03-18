@@ -74,11 +74,11 @@ const options = [
     type: "newConversation",
     icon: ChatMenuIcon
   },
-  {
-    name: t("addContact"),
-    type: "addContact",
-    icon: AddContactMenuIcon
-  },
+  // {
+  //   name: t("addContact"),
+  //   type: "addContact",
+  //   icon: AddContactMenuIcon
+  // },
   {
     name: t("createGroup"),
     type: "createGroup",

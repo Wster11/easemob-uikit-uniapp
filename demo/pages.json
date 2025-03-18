@@ -1,9 +1,12 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/Login/index",
+			"path": "ChatUIKit/modules/Conversation/index",
 			"style": {
-				"navigationStyle": "custom"
+				"navigationStyle": "custom",
+				"app-plus": {
+					"bounce": "none"
+				}
 			}
 		},
 		{
@@ -53,15 +56,6 @@
 		},
 		{
 			"path": "pages/About/index",
-			"style": {
-				"navigationStyle": "custom",
-				"app-plus": {
-					"bounce": "none"
-				}
-			}
-		},
-		{
-			"path": "ChatUIKit/modules/Conversation/index",
 			"style": {
 				"navigationStyle": "custom",
 				"app-plus": {
