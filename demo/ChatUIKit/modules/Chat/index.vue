@@ -10,7 +10,7 @@
     <!-- 消息列表 -->
     <view class="msgs-wrap">
       <!-- 风险提示 -->
-      <RiskTip />
+      <!-- <RiskTip /> -->
       <!-- 遮照层,点击关闭Toolbar -->
       <view v-if="isShowMask" class="mask" @tap="closeToolbar"></view>
       <MessageList

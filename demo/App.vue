@@ -37,17 +37,13 @@ ChatUIKit.hideFeature(["useUserInfo"]);
 ChatUIKit.getChatConn().addEventHandler("chat", {
   onMessage: (messages) => {
     messages.forEach((message) => {
-      if (message.chatType === "singleChat") {
-        const { ease_chat_uikit_user_info } = message.ext || {};
-        const { nickname, avatarURL } = ease_chat_uikit_user_info || {};
-        if (
-          !ChatUIKit.appUserStore.getUserInfoFromStore(message.from).nickname
-        ) {
-          ChatUIKit.appUserStore.setUserInfo(message.from, {
-            nickname: nickname,
-            avatarurl: avatarURL
-          });
-        }
+      const { ease_chat_uikit_user_info } = message.ext || {};
+      const { nickname, avatarURL } = ease_chat_uikit_user_info || {};
+      if (!ChatUIKit.appUserStore.getUserInfoFromStore(message.from).nickname) {
+        ChatUIKit.appUserStore.setUserInfo(message.from, {
+          nickname: nickname,
+          avatarurl: avatarURL
+        });
       }
     });
   }
