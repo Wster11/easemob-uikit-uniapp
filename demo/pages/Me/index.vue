@@ -41,10 +41,10 @@
           </template>
         </MenuItem>
       </view>
-      <view class="menu-group-name">
+      <!-- <view class="menu-group-name">
         {{ t("meLoginGroupName") }}
       </view>
-      <view class="logout" @tap="logout">{{ t("meLogout") }}</view>
+      <view class="logout" @tap="logout">{{ t("meLogout") }}</view> -->
     </view>
   </view>
 </template>

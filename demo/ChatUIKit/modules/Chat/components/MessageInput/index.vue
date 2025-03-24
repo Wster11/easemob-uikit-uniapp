@@ -35,7 +35,7 @@
       <view class="icon plus-icon" @tap.stop="showToolbar"></view>
     </view>
     <view class="icon-wrap" v-else>
-      <view class="icon send-icon" @tap.stop="handleSendMessage"></view>
+      <view class="icon send-icon" @touchend.prevent="handleSendMessage"></view>
     </view>
   </view>
 </template>
